@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Typography, TextField, FormControl } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     '&.MuiTypography-root': {
-        fontSize: 18,
-        lineHeight: '26px',
-        color: '#212B36',
-        fontWeight: 600,
-        marginBottom: 16,
+      fontSize: 18,
+      lineHeight: '26px',
+      color: '#212B36',
+      fontWeight: 600,
+      marginBottom: 16,
     }
   },
   inputOption: {
