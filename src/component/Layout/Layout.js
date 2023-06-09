@@ -17,6 +17,7 @@ import { registerUser } from '../../api/api';
 import { v4 as uuidv4 } from 'uuid';
 import Loading from '../Loading/Loading';
 import { styled } from "@mui/material";
+import Footer from '../Footer/Footer';
 
 const SelectGender = lazy(() => import('../SelectGender/SelectGender'));
 const SelectLookingFor = lazy(() => import('../SelectLookingFor/SelectLookingFor'));
@@ -24,7 +25,6 @@ const SelectLocation = lazy(() => import('../SelectLocation/SelectLocation'));
 const UserName = lazy(() => import('../Username/UserName'));
 const CreatePassword = lazy(() => import('../Password/Password'));
 const InformationBlock = lazy(() => import('../InformationBlock/InformationBlock'));
-const Footer = lazy(() => import('../Footer/Footer'));
 
 const steps = [
     <WcOutlinedIcon />,
