@@ -24,7 +24,7 @@ const SelectLookingFor = lazy(() => import('../SelectLookingFor/SelectLookingFor
 const SelectLocation = lazy(() => import('../SelectLocation/SelectLocation'));
 const UserName = lazy(() => import('../Username/UserName'));
 const CreatePassword = lazy(() => import('../Password/Password'));
-const InformationBlock = lazy(() => import('../InformationBlock/InformationBlock'));
+// const InformationBlock = lazy(() => import('../InformationBlock/InformationBlock'));
 
 const steps = [
     <WcOutlinedIcon />,
@@ -283,7 +283,7 @@ const Layout = () => {
               </KeyframesBlock>
                 
             </Grid>
-            <InformationBlock />
+            {/* <InformationBlock /> */}
           </Box>
           
           {/* <Footer /> */}
