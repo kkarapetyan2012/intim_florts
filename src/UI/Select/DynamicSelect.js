@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 const DynamicSelect = ({ options, value, onChange, placeholder, wrapperClassName }) => {
   const classesNew = useStyles();
   const classes = classNames(wrapperClassName, classesNew.inputWidth);
-  const menuItems = options.map((option) => (
-    <MenuItem key={option.value} value={option.value}>
+  const menuItems = options.map((option, idx) => (
+    <MenuItem key={idx} value={option.value}>
       {option.label}
     </MenuItem>
   ));

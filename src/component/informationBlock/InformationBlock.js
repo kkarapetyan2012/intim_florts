@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import { styled } from "@mui/material";
 import i1 from '../../assets/images/i1.png';
 import i2 from '../../assets/images/i2.png';
 import i3 from '../../assets/images/i3.png';
@@ -71,7 +72,9 @@ const useStyles = makeStyles((theme) => ({
                 }
             }
         }
-       
+    },
+    resetStyles: {
+        padding: '2px !important',
     },
     cardContent: {
         '&.MuiCardContent-root': {
@@ -95,29 +98,64 @@ const useStyles = makeStyles((theme) => ({
                 lineHeight: '24px',
             }
         }
-    }
+    },
 }));
+
+const Keyframes = styled("div")({
+    "@keyframes pulsate": {
+      "0": {
+        transform: "scale(1)"
+      },
+
+      "50%": {
+        transform: "scale(1.1)"
+      },
+
+      "100%": {
+        transform: "scale(1)"
+      }
+    },
+    animation: "pulsate 2s ease-in-out infinite",
+});
   
 
 const InformationBlock = () => {
     const classes = useStyles();
+    const calculateAnimationDelay = (index) => `${(index + 1) * 2000}ms`; 
+
     return (
         <div className={classes.informationList}>
-            {informationList.map(item => 
-                <a key={item.id} href={item.link} className={classes.informationLink}>
+            {informationList.map((item, idx) => 
+                <a key={idx} href={item.link} className={classes.informationLink}>
                     <Card className={classes.informationItem}>
-                        <CardMedia
-                            sx={{ width: 64, height: 64, margin: 'auto' }}
-                            image={item.img}
-                            title={item.title}
-                        />
+                        <Keyframes
+                            sx={{ 
+                                width: 68, 
+                                height: 68,
+                                padding: 2,
+                                margin: '4px auto' ,
+                                animationDelay: `${calculateAnimationDelay(idx)}`
+                            }}
+                            className={classes.resetStyles}
+                        >
+                            <CardMedia
+                                sx={{ 
+                                    width: 64, 
+                                    height: 64, 
+                                    padding: 0,
+                                    margin: 'auto',
+                                }}
+                                image={item.img}
+                                title={item.title}
+                            />
+                        </Keyframes>
                         <CardContent className={classes.cardContent}>
                             <Typography className={classes.title} gutterBottom variant="body1" component="div">
                                 {item.title}
                             </Typography>
                         </CardContent>
-                </Card>
-              </a>
+                    </Card>
+                </a>
             )}
         </div>
     );
