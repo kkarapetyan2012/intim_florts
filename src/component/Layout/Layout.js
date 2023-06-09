@@ -17,7 +17,7 @@ import { registerUser } from '../../api/api';
 import { v4 as uuidv4 } from 'uuid';
 import Loading from '../Loading/Loading';
 import { styled } from "@mui/material";
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 
 const SelectGender = lazy(() => import('../SelectGender/SelectGender'));
 const SelectLookingFor = lazy(() => import('../SelectLookingFor/SelectLookingFor'));
@@ -286,7 +286,7 @@ const Layout = () => {
             <InformationBlock />
           </Box>
           
-          <Footer />
+          {/* <Footer /> */}
         </Grid>
         </Suspense>
     );
